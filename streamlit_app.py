@@ -65,7 +65,7 @@ def Home():
             try:
                 data = pd.read_csv(data_file)
             except:
-                data = pd.read_excel("OLX_Car_Data_excel.xlsx",engine='openpyxl')
+                data = pd.read_excel(data_file,engine='openpyxl')
             # here we are calling our functions which we created earlier
             data_type = des_fun.differentiate(data)
             
@@ -326,9 +326,9 @@ def Correlation():
         
         # here we read data and make it as a data frame
         try:
-            data = pd.read_csv(file_details['filename'])
+            data = pd.read_csv(data_file)
         except:
-            data = pd.read_excel(file_details['filename'])
+            data = pd.read_excel(data_file,engine='openpyxl')
         # here we are calling our functions which we created earlier
         data_type = des_fun.differentiate(data)
 
@@ -547,9 +547,9 @@ def Intrective_charts():
         
         # here we read data and make it as a data frame
         try:
-            data = pd.read_csv(file_details['filename'])
+            data = pd.read_csv(data_file)
         except:
-            data = pd.read_excel(file_details['filename'])
+            data = pd.read_excel(data_file,engine='openpyxl')
 
         option = des_fun.differentiate(data=data)
         # print(option[0].columns)
